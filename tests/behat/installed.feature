@@ -1,4 +1,4 @@
-@mod @local_twittercard
+@local @local_twittercard
 Feature: Installation succeeds
   In order to use this plugin
   As a user

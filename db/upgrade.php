@@ -42,13 +42,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Execute twittercard upgrade from the given old version
+ * Execute local_twittercard upgrade from the given old version
  *
  * @param int $oldversion
  * @return bool
  */
-function xmldb_twittercard_upgrade($oldversion) {
-    global $DB;
+function xmldb_local_twittercard_upgrade($oldversion) {
 
     // Finally, return of upgrade result (true, all went good) to Moodle.
     return true;
