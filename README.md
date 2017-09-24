@@ -1,5 +1,7 @@
-# Description
-This Moodle local plug-in emits a Twitter summary card for courses.
+![Build status: master](https://travis-ci.org/scara/moodle-local_twittercard.svg?branch=master)
+
+# Moodle Twitter card local plugin
+This Moodle local plugin emits a Twitter summary card for courses.
 
 # Installation
 To install using _git_, type this command in the root of your Moodle installation:
@@ -24,7 +26,7 @@ After you have installed this local plugin, you'll need to configure it under
 _Site administration -> Plugins -> Local plugins -> Twitter card_ in the _Settings_ block.
 
 # License
-The Twitter card Moodle local plug-in is licenced under the GNU GPL v3 or later.
+The Twitter card Moodle local plugin is licenced under the GNU GPL v3 or later.
 Copyright (c) 2017 Matteo Scaramuccia <moodle@matteoscaramuccia.com>
 
     This program is free software: you can redistribute it and/or modify
