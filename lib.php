@@ -42,94 +42,29 @@ defined('MOODLE_INTERNAL') || die();
 function local_twittercard_before_standard_html_head() {
     global $PAGE;
 
-    $enabled = (bool)get_config('local_twittercard', 'enabled');
-    list($context, $course, $cm) = get_context_info_array($PAGE->context->id);
+    // Trap any catchable error.
+    try {
+        $enabled = (bool)get_config('local_twittercard', 'enabled');
+        list($context, $course, $cm) = get_context_info_array($PAGE->context->id);
 
-    // Sanity checks.
-    // 1. Do not emit the card if we're not looking at a course.
-    if ($enabled && empty($course)) {
-        $enabled = false;
-    }
-    // 2. Do not emit the card if we're looking at e.g. an activity in a course.
-    if ($enabled && !empty($cm)) {
-        $enabled = false;
-    }
-
-    // Twitter summary card specs: https://dev.twitter.com/cards/types/summary.
-    if ($enabled) {
-        // Tag twitter:site - Twitter @username of the website.
-        $twittersitesetting = get_config('local_twittercard', 'twittersite');
-        $twittersite = '';
-        if (!empty($twittersitesetting) && ($twittersitesetting[0] === '@')) {
-            // Properly quote the text.
-            $twittersitesetting = s($twittersitesetting);
-            $twittersite = "<meta name='twitter:site' content='$twittersitesetting' />\n";
+        // Sanity checks.
+        // 1. Do not emit the card if we're not looking at a course.
+        if ($enabled && empty($course)) {
+            $enabled = false;
+        }
+        // 2. Do not emit the card if we're looking at e.g. an activity in a course.
+        if ($enabled && !empty($cm)) {
+            $enabled = false;
         }
 
-        // Tag twitter:title - Title of content (max 70 characters).
-        $coursetitle = empty($course->fullname) ? $course->name : $course->fullname;
-        if (core_text::strlen($coursetitle) > 70) {
-            $coursetitle = core_text::substr($coursetitle, 0, 67);
-            $coursetitle = $coursetitle . "...";
-        }
-        // Properly quote the text.
-        $coursetitle = s($coursetitle);
-
-        if (!empty($coursetitle)) {
-            // Tag twitter:description - Description of content (maximum 200 characters).
-            $coursedescr = html_to_text($course->summary, -1, false);
-            if (core_text::strlen($coursedescr) > 200) {
-                $coursedescr = core_text::substr($coursedescr, 0, 197);
-                $coursedescr = $coursedescr . "...";
-            }
-            // Properly quote the text.
-            $coursedescr = s($coursedescr);
-
-            if (!empty($coursedescr)) {
-                // Tag twitter:image - URL of image to use in the card. Images must be less than 5MB in size.
-                // JPG, PNG, WEBP and GIF formats are supported.
-                // Only the first frame of an animated GIF will be used. SVG is not supported.
-                $twitterimage = '';
-                $modinfo = get_fast_modinfo($course);
-                $sections = $modinfo->get_section_info_all();
-                $section = reset($sections);
-                if ($section) {
-                    $sectionno = $section->section;
-                    if ($sectionno == 0) {
-                        $sectiontext = file_rewrite_pluginfile_urls($section->summary, 'pluginfile.php',
-                            $context->id, 'course', 'section', $section->id);;
-                        if (!empty($sectiontext)) {
-                            $doc = new DOMDocument();
-                            @$doc->loadHTML($sectiontext);
-                            $imgtags = $doc->getElementsByTagName('img');
-                            $imgtag = $imgtags->item(0);
-                            if (!empty($imgtag)) {
-                                $imgurl = $imgtag->getAttribute('src');
-                                if (!empty($imgurl)) {
-                                    $supportedexts = array('gif', 'jpg', 'png', 'webp');
-                                    // Get the path from the URL.
-                                    $path = parse_url($imgurl, PHP_URL_PATH);
-                                    // Get the extension from path.
-                                    $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
-                                    if (in_array($ext, $supportedexts)) {
-                                        // Properly quote the text.
-                                        $imgurl = s($imgurl);
-                                        $twitterimage = "<meta name='twitter:image' content='$imgurl' />\n";
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                return
-                    "<meta name='twitter:card' content='summary' />\n" .
-                    $twittersite .
-                    "<meta name='twitter:title' content='$coursetitle' />\n" .
-                    "<meta name='twitter:description' content='$coursedescr' />\n" .
-                    $twitterimage;
+        if ($enabled) {
+            $card = \local_twittercard\helper::create_card($context, $course);
+            if (!empty($card)) {
+                return $card;
             }
         }
+    } finally {
+        // Do nothing here.
     }
 
     return '';
