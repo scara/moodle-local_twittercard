@@ -96,13 +96,13 @@ class helper {
             // Tag twitter:site - Twitter @username of the website.
             $twittersite = get_config('local_twittercard', 'twittersite');
 
-            // Tag twitter:title (required) - Title of content (max 70 characters).
+            // Tag twitter:title (required) - Title of content.
             $coursetitle = empty($course->fullname) ? $course->name : $course->fullname;
 
-            // Tag twitter:description (required) - Description of content (maximum 200 characters).
+            // Tag twitter:description (required) - Description of content.
             $coursedescr = html_to_text($course->summary, -1, false);
 
-            // Tag twitter:image (optional) - URL of image to use in the card. Images must be less than 5MB in size.
+            // Tag twitter:image (optional) - URL of image to use in the card.
             // JPG, PNG, WEBP and GIF formats are supported.
             // Only the first frame of an animated GIF will be used. SVG is not supported.
             $imgurl = '';
@@ -119,7 +119,7 @@ class helper {
             $card = new \local_twittercard\cards\summary($coursetitle, $coursedescr, $twittersite, $imgurl, $imgalt);
             $metatags = $card->create_meta_tags();
             if (!empty($metatags)) {
-                return $metatags;
+                return join('', $metatags);
             }
         } finally {
             // Do nothing here.

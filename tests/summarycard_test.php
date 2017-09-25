@@ -41,68 +41,85 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
         return array(
             [
                 'title', 'description', '@site', 'http://example.org/path/to/img.png', 'imagealt',
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:site' content='@site' />
-<meta name='twitter:title' content='title' />
-<meta name='twitter:description' content='description' />
-<meta name='twitter:image' content='http://example.org/path/to/img.png' />
-<meta name='twitter:image:alt' content='imagealt' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:site' content='@site' />\n",
+                    "<meta name='twitter:title' content='title' />\n",
+                    "<meta name='twitter:description' content='description' />\n",
+                    "<meta name='twitter:image' content='http://example.org/path/to/img.png' />\n",
+                    "<meta name='twitter:image:alt' content='imagealt' />\n",
+                ]
             ],
             [
                 'title', 'description', '@site', 'http://example.org/path/to/img.png', null,
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:site' content='@site' />
-<meta name='twitter:title' content='title' />
-<meta name='twitter:description' content='description' />
-<meta name='twitter:image' content='http://example.org/path/to/img.png' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:site' content='@site' />\n",
+                    "<meta name='twitter:title' content='title' />\n",
+                    "<meta name='twitter:description' content='description' />\n",
+                    "<meta name='twitter:image' content='http://example.org/path/to/img.png' />\n",
+                ]
             ],
             [
                 'title', 'description', 'site', 'http://example.org/path/to/img.png', 'imagealt',
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:title' content='title' />
-<meta name='twitter:description' content='description' />
-<meta name='twitter:image' content='http://example.org/path/to/img.png' />
-<meta name='twitter:image:alt' content='imagealt' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:title' content='title' />\n",
+                    "<meta name='twitter:description' content='description' />\n",
+                    "<meta name='twitter:image' content='http://example.org/path/to/img.png' />\n",
+                    "<meta name='twitter:image:alt' content='imagealt' />\n",
+                ]
             ],
             [
                 'title', 'description', 'site', null, 'imagealt',
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:title' content='title' />
-<meta name='twitter:description' content='description' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:title' content='title' />\n",
+                    "<meta name='twitter:description' content='description' />\n",
+                ]
             ],
             [
                 'title', 'description', null, null, 'imagealt',
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:title' content='title' />
-<meta name='twitter:description' content='description' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:title' content='title' />\n",
+                    "<meta name='twitter:description' content='description' />\n",
+                ]
             ],
             [
                 'title', 'description', null, null, null,
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:title' content='title' />
-<meta name='twitter:description' content='description' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:title' content='title' />\n",
+                    "<meta name='twitter:description' content='description' />\n",
+                ]
             ],
             [
                 'title', 'description', '@site', 'http://example.org/path/to/img.svg', 'imagealt',
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:site' content='@site' />
-<meta name='twitter:title' content='title' />
-<meta name='twitter:description' content='description' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:site' content='@site' />\n",
+                    "<meta name='twitter:title' content='title' />\n",
+                    "<meta name='twitter:description' content='description' />\n",
+                ]
+            ],
+            [
+                'title', 'description', '@site', 'this_is_an_invalid_url', 'imagealt',
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:site' content='@site' />\n",
+                    "<meta name='twitter:title' content='title' />\n",
+                    "<meta name='twitter:description' content='description' />\n",
+                ]
             ],
             [
                 'title\'s', 'description\'s', '@site', 'http://example.org/path/to/img.svg', 'imagealt',
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:site' content='@site' />
-<meta name='twitter:title' content='title&#039;s' />
-<meta name='twitter:description' content='description&#039;s' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:site' content='@site' />\n",
+                    "<meta name='twitter:title' content='title&#039;s' />\n",
+                    "<meta name='twitter:description' content='description&#039;s' />\n",
+                ]
             ],
             [
                 '0123456789012345678901234567890123456789012345678901234567890123456789',
@@ -111,13 +128,14 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
                     '012345678901234567890123456789012345678901234567890123456789',
                 '@site', 'http://example.org/path/to/img.svg',
                 'imagealt',
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:site' content='@site' />
-<meta name='twitter:title' content='0123456789012345678901234567890123456789012345678901234567890123456789' />
-<meta name='twitter:description' content='0123456789012345678901234567890123456789012345678901234567890123456789".
-                "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789".
-                "012345678901234567890123456789' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:site' content='@site' />\n",
+                    "<meta name='twitter:title' content='0123456789012345678901234567890123456789012345678901234567890123456789' />\n",
+                    "<meta name='twitter:description' content='0123456789012345678901234567890123456789012345678901234567890123456789".
+                        "0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789".
+                        "012345678901234567890123456789' />\n",
+                ]
             ],
             [
                 '01234567890123456789012345678901234567890123456789012345678901234567890',
@@ -126,13 +144,14 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
                     '0123456789012345678901234567890123456789012345678901234567890',
                 '@site', 'http://example.org/path/to/img.svg',
                 'imagealt',
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:site' content='@site' />
-<meta name='twitter:title' content='0123456789012345678901234567890123456789012345678901234567890123456...' />
-<meta name='twitter:description' content='01234567890123456789012345678901234567890123456789012345678901234567890".
-                "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789".
-                "012345678901234567890123456...' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:site' content='@site' />\n",
+                    "<meta name='twitter:title' content='0123456789012345678901234567890123456789012345678901234567890123456...' />\n",
+                    "<meta name='twitter:description' content='01234567890123456789012345678901234567890123456789012345678901234567890".
+                        "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789".
+                        "012345678901234567890123456...' />\n",
+                ]
             ],
             [
                 'title', 'description', 'site', 'http://example.org/path/to/img.png',
@@ -142,17 +161,18 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
                     '0123456789012345678901234567890123456789012345678901234567890123456789'.
                     '0123456789012345678901234567890123456789012345678901234567890123456789'.
                     '01234567890123456789012345678901234567890123456789012345678901234567890',
-                "<meta name='twitter:card' content='summary' />
-<meta name='twitter:title' content='title' />
-<meta name='twitter:description' content='description' />
-<meta name='twitter:image' content='http://example.org/path/to/img.png' />
-<meta name='twitter:image:alt' content='0123456789012345678901234567890123456789012345678901234567890123456789".
-                "0123456789012345678901234567890123456789012345678901234567890123456789".
-                "0123456789012345678901234567890123456789012345678901234567890123456789".
-                "0123456789012345678901234567890123456789012345678901234567890123456789".
-                "0123456789012345678901234567890123456789012345678901234567890123456789".
-                "0123456789012345678901234567890123456789012345678901234567890123456...' />
-"
+                [
+                    "<meta name='twitter:card' content='summary' />\n",
+                    "<meta name='twitter:title' content='title' />\n",
+                    "<meta name='twitter:description' content='description' />\n",
+                    "<meta name='twitter:image' content='http://example.org/path/to/img.png' />\n",
+                    "<meta name='twitter:image:alt' content='0123456789012345678901234567890123456789012345678901234567890123456789".
+                        "0123456789012345678901234567890123456789012345678901234567890123456789".
+                        "0123456789012345678901234567890123456789012345678901234567890123456789".
+                        "0123456789012345678901234567890123456789012345678901234567890123456789".
+                        "0123456789012345678901234567890123456789012345678901234567890123456789".
+                        "0123456789012345678901234567890123456789012345678901234567890123456...' />\n",
+                    ]
             ],
         );
     }
@@ -167,7 +187,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
      * @param null|string $twittersite Tag twitter:site
      * @param null|string $twitterimage Tag twitter:image
      * @param null|string $twitterimagealt Tag twitter:image:alt
-     * @param string $metatags Expected summary card meta tags.
+     * @param array $metatags Expected summary card meta tags.
      */
     public function test_successful_creating($twittertitle, $twitterdescription, $twittersite,
                                              $twitterimage, $twitterimagealt, $metatags) {
@@ -228,6 +248,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
                                           $twitterimage, $twitterimagealt, $excmessage) {
         $card = new \local_twittercard\cards\summary(
             $twittertitle, $twitterdescription, $twittersite, $twitterimage, $twitterimagealt);
+
         $this->expectExceptionMessage($excmessage);
     }
 }

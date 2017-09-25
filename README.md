@@ -3,6 +3,9 @@
 # Moodle Twitter card local plugin
 This Moodle local plugin emits a Twitter summary card for courses.
 
+# Requirements
+- Moodle 3.3 (build 2017051500 or later)
+
 # Installation
 To install using _git_, type this command in the root of your Moodle installation:
 ```

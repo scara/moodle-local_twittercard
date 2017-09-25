@@ -114,17 +114,19 @@ class summary {
     /**
      * Creates the meta tags representing the Twitter summary card.
      *
-     * @return string The meta tags representing the Twitter summary card.
+     * @return array The meta tags representing the Twitter summary card; otherwise, an empty array.
      */
     public function create_meta_tags() {
+        $metatags = array();
+
         // Tag twitter:card => summary.
+        $metatags[] = "<meta name='twitter:card' content='summary' />\n";
 
         // Tag twitter:site (optional) - Twitter @username of the website.
-        $twittersitemeta = '';
         if (!empty($this->twittersite) && ($this->twittersite[0] === '@')) {
             // Properly quote the text.
             $twittersiteenc = s($this->twittersite);
-            $twittersitemeta = "<meta name='twitter:site' content='$twittersiteenc' />\n";
+            $metatags[] = "<meta name='twitter:site' content='$twittersiteenc' />\n";
         }
 
         // Tag twitter:title (required) - Title of content (max 70 characters).
@@ -135,6 +137,7 @@ class summary {
         }
         // Properly quote the text.
         $coursetitleenc = s($coursetitle);
+        $metatags[] = "<meta name='twitter:title' content='$coursetitleenc' />\n";
 
         // Tag twitter:description (required) - Description of content (maximum 200 characters).
         $coursedescr = $this->twitterdescription;
@@ -144,43 +147,46 @@ class summary {
         }
         // Properly quote the text.
         $coursedescrenc = s($coursedescr);
+        $metatags[] = "<meta name='twitter:description' content='$coursedescrenc' />\n";
 
         // Tag twitter:image (optional) - URL of image to use in the card. Images must be less than 5MB in size.
         // JPG, PNG, WEBP and GIF formats are supported.
         // Only the first frame of an animated GIF will be used. SVG is not supported.
-        $twitterimagemeta = '';
-        $twitterimagealtmeta = '';
-        if (!empty($this->twitterimage)) {
-            // Get the path from the URL.
-            $path = parse_url($this->twitterimage, PHP_URL_PATH);
-            if ($path !== false) {
-                // Get the extension from path.
-                $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
-                if (in_array($ext, $this->supportedimgexts)) {
-                    // Properly quote the text.
-                    $imgurlenc = s($this->twitterimage);
-                    $twitterimagemeta = "<meta name='twitter:image' content='$imgurlenc' />\n";
-
-                    if (!empty($this->twitterimagealt)) {
-                        $imgalt = $this->twitterimagealt;
-                        if (\core_text::strlen($imgalt) > 420) {
-                            $imgalt = \core_text::substr($imgalt, 0, 417);
-                            $imgalt = $imgalt . "...";
-                        }
-                        // Properly quote the text.
-                        $imgaltenc = s($imgalt);
-                        $twitterimagealtmeta = "<meta name='twitter:image:alt' content='$imgaltenc' />\n";
-                    }
-                }
-            }
+        if (empty($this->twitterimage)) {
+            // No image URL: exit with the current set of tags.
+            return $metatags;
         }
+        // Get the path from the URL.
+        $path = parse_url($this->twitterimage, PHP_URL_PATH);
+        if ($path === false) {
+            // Invalid URL: exit with the current set of tags.
+            return $metatags;
+        }
+        // Get the extension from path.
+        $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+        if (!in_array($ext, $this->supportedimgexts)) {
+            // Unsupported image type (via extension): exit with the current set of tags.
+            return $metatags;
+        }
+        // We do not check that the image is less than 5MB in size.
+        // Properly quote the text.
+        $imgurlenc = s($this->twitterimage);
+        $metatags[] = "<meta name='twitter:image' content='$imgurlenc' />\n";
 
-        return
-            "<meta name='twitter:card' content='summary' />\n" .
-            $twittersitemeta .
-            "<meta name='twitter:title' content='$coursetitleenc' />\n" .
-            "<meta name='twitter:description' content='$coursedescrenc' />\n" .
-            $twitterimagemeta .
-            $twitterimagealtmeta;
+        if (empty($this->twitterimagealt)) {
+            // No image alternate text: exit with the current set of tags.
+            return $metatags;
+        }
+        $imgalt = $this->twitterimagealt;
+        if (\core_text::strlen($imgalt) > 420) {
+            $imgalt = \core_text::substr($imgalt, 0, 417);
+            $imgalt = $imgalt . "...";
+        }
+        // Properly quote the text.
+        $imgaltenc = s($imgalt);
+        $metatags[] = "<meta name='twitter:image:alt' content='$imgaltenc' />\n";
+
+        // Finally return all the tags created.
+        return $metatags;
     }
 }
