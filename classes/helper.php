@@ -48,7 +48,7 @@ class helper {
      * @param null|stdClass $section Related section instance
      * @return null|array An associative array containing the image URL and its alternate text; otherwise, null.
      */
-    public static function extract_first_image_section0($context, $section) {
+    private static function extract_first_image_section0($context, $section) {
         // Sanity checks.
         if (!$context || !$section) {
             return null;
