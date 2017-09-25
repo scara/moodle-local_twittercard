@@ -130,21 +130,13 @@ class summary {
         }
 
         // Tag twitter:title (required) - Title of content (max 70 characters).
-        $coursetitle = $this->twittertitle;
-        if (\core_text::strlen($coursetitle) > 70) {
-            $coursetitle = \core_text::substr($coursetitle, 0, 67);
-            $coursetitle = $coursetitle . "...";
-        }
+        $coursetitle = shorten_text($this->twittertitle, 70);
         // Properly quote the text.
         $coursetitleenc = s($coursetitle);
         $metatags[] = "<meta name='twitter:title' content='$coursetitleenc' />\n";
 
         // Tag twitter:description (required) - Description of content (maximum 200 characters).
-        $coursedescr = $this->twitterdescription;
-        if (\core_text::strlen($coursedescr) > 200) {
-            $coursedescr = \core_text::substr($coursedescr, 0, 197);
-            $coursedescr = $coursedescr . "...";
-        }
+        $coursedescr = shorten_text($this->twitterdescription, 200);
         // Properly quote the text.
         $coursedescrenc = s($coursedescr);
         $metatags[] = "<meta name='twitter:description' content='$coursedescrenc' />\n";
@@ -177,11 +169,7 @@ class summary {
             // No image alternate text: exit with the current set of tags.
             return $metatags;
         }
-        $imgalt = $this->twitterimagealt;
-        if (\core_text::strlen($imgalt) > 420) {
-            $imgalt = \core_text::substr($imgalt, 0, 417);
-            $imgalt = $imgalt . "...";
-        }
+        $imgalt = shorten_text($this->twitterimagealt, 420);
         // Properly quote the text.
         $imgaltenc = s($imgalt);
         $metatags[] = "<meta name='twitter:image:alt' content='$imgaltenc' />\n";
