@@ -38,7 +38,7 @@ if ($hassiteconfig) {
     $name = 'local_twittercard/enabled';
     $title = get_string('enabled', 'local_twittercard');
     $description = get_string('enabled_help', 'local_twittercard');
-    $default = '1';
+    $default = '0';
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     $settings->add($setting);
 
