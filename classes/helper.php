@@ -48,7 +48,7 @@ class helper {
      * @param null|stdClass $section Related section instance
      * @return null|array An associative array containing the image URL and its alternate text; otherwise, null.
      */
-    public static function extract_first_image_section0($context, $section) {
+    private static function extract_first_image_section0($context, $section) {
         // Sanity checks.
         if (!$context || !$section) {
             return null;
@@ -67,7 +67,9 @@ class helper {
         }
 
         $doc = new \DOMDocument();
-        @$doc->loadHTML($sectiontext);
+        libxml_use_internal_errors(true);
+        $doc->loadHTML('<?xml version="1.0" encoding="UTF-8" ?>' . $sectiontext);
+        libxml_clear_errors();
         $imgtags = $doc->getElementsByTagName('img');
         $imgtag = $imgtags->item(0);
         if (empty($imgtag)) {
@@ -96,13 +98,16 @@ class helper {
             // Tag twitter:site - Twitter @username of the website.
             $twittersite = get_config('local_twittercard', 'twittersite');
 
-            // Tag twitter:title (required) - Title of content (max 70 characters).
+            // Tag twitter:title (required) - Title of content.
             $coursetitle = empty($course->fullname) ? $course->name : $course->fullname;
+            $coursetitle = format_string($coursetitle, true, array('context' => \context_system::instance()));
 
-            // Tag twitter:description (required) - Description of content (maximum 200 characters).
-            $coursedescr = html_to_text($course->summary, -1, false);
+            // Tag twitter:description (required) - Description of content.
+            $coursedescr = format_text($course->summary, FORMAT_HTML,
+                array('context' => \context_system::instance(), 'newlines' => false));
+            $coursedescr = html_to_text($coursedescr, -1, false);
 
-            // Tag twitter:image (optional) - URL of image to use in the card. Images must be less than 5MB in size.
+            // Tag twitter:image (optional) - URL of image to use in the card.
             // JPG, PNG, WEBP and GIF formats are supported.
             // Only the first frame of an animated GIF will be used. SVG is not supported.
             $imgurl = '';
@@ -119,7 +124,7 @@ class helper {
             $card = new \local_twittercard\cards\summary($coursetitle, $coursedescr, $twittersite, $imgurl, $imgalt);
             $metatags = $card->create_meta_tags();
             if (!empty($metatags)) {
-                return $metatags;
+                return join('', $metatags);
             }
         } finally {
             // Do nothing here.
