@@ -56,6 +56,15 @@ function local_twittercard_before_standard_html_head() {
         if ($enabled && !empty($cm)) {
             $enabled = false;
         }
+        // 3. Do not emit the card if we're editing the course.
+        if ($enabled && $PAGE->user_is_editing()) {
+            $enabled = false;
+        }
+        // 4. Do not emit the card if we're editing the course settings.
+        $courseediturlpath = 'course/edit.php';
+        if ($enabled && (substr($PAGE->url->get_path(), -strlen($courseediturlpath)) === $courseediturlpath)) {
+            $enabled = false;
+        }
 
         if ($enabled) {
             $card = \local_twittercard\helper::create_card($context, $course);
