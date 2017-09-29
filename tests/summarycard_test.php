@@ -240,8 +240,6 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
      */
     public function test_successful_creating_multilang($twittertitle, $twitterdescription, $twittersite,
                                                        $twitterimage, $twitterimagealt, $metatags) {
-        global $CFG;
-
         $this->resetAfterTest();
 
         $card = new \local_twittercard\cards\summary(
@@ -305,9 +303,9 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
      */
     public function test_failing_creating($twittertitle, $twitterdescription, $twittersite,
                                           $twitterimage, $twitterimagealt, $excmessage) {
+        $this->expectExceptionMessage($excmessage);
+
         $card = new \local_twittercard\cards\summary(
             $twittertitle, $twitterdescription, $twittersite, $twitterimage, $twitterimagealt);
-
-        $this->expectExceptionMessage($excmessage);
     }
 }
