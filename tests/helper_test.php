@@ -43,6 +43,8 @@ class local_twittercard_helper_testcase extends advanced_testcase {
      * This are the tests for creating Twitter summary cards, even when using multi-language content.
      */
     public function test_create_card() {
+        global $DB;
+
         // Create a course.
         $course = $this->getDataGenerator()->create_course(array(
             'fullname' => 'title',
@@ -54,6 +56,37 @@ class local_twittercard_helper_testcase extends advanced_testcase {
             "<meta name='twitter:card' content='summary' />\n" .
                 "<meta name='twitter:title' content='title' />\n" .
                 "<meta name='twitter:description' content='description' />\n",
+            \local_twittercard\helper::create_card($context, $course));
+
+        $sections = $DB->get_records('course_sections', array('course' => $course->id));
+        $section = reset($sections);
+        course_update_section($course, $section, array('summary' => '<p><img src="http://example.org/path/to/image.png"></p>'));
+        $this->assertEquals(
+            "<meta name='twitter:card' content='summary' />\n" .
+                "<meta name='twitter:title' content='title' />\n" .
+                "<meta name='twitter:description' content='description' />\n" .
+                "<meta name='twitter:image' content='http://example.org/path/to/image.png' />\n",
+            \local_twittercard\helper::create_card($context, $course));
+
+        course_update_section($course, $section, array(
+            'summary' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>' .
+                '<p><img src="http://example.org/path/to/image1.png"><img src="http://example.org/path/to/image2.png">' .
+                '<img src="http://example.org/path/to/image3.png"></p>'));
+        $this->assertEquals(
+            "<meta name='twitter:card' content='summary' />\n" .
+                "<meta name='twitter:title' content='title' />\n" .
+                "<meta name='twitter:description' content='description' />\n" .
+                "<meta name='twitter:image' content='http://example.org/path/to/image1.png' />\n",
+            \local_twittercard\helper::create_card($context, $course));
+
+        course_update_section($course, $section, array(
+            'summary' => '<p><img src="http://example.org/path/to/image.png" alt="blahblahblah"></p>'));
+        $this->assertEquals(
+            "<meta name='twitter:card' content='summary' />\n" .
+                "<meta name='twitter:title' content='title' />\n" .
+                "<meta name='twitter:description' content='description' />\n" .
+                "<meta name='twitter:image' content='http://example.org/path/to/image.png' />\n" .
+                "<meta name='twitter:image:alt' content='blahblahblah' />\n",
             \local_twittercard\helper::create_card($context, $course));
 
         // Create another course.
