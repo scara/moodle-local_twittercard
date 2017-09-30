@@ -3,6 +3,15 @@
 # Moodle Twitter card local plugin
 This Moodle local plugin emits a Twitter summary card for courses.
 
+The Twitter Summary Card in the course homepage will give kind of preview of the content of your Moodle course by using the information provided by mean of:
+- the course title
+- the course description
+- an optional image, being the first added in Section #0. Beware that this image should be publicly available regardless the user being enrolled into that course
+
+If you want to deepen what a Twitter Summary Card is, more details are available at:
+- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary
+- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/markup
+
 # Requirements
 - Moodle 3.3 (build 2017051500 or later)
 
@@ -29,7 +38,9 @@ After you have installed this local plugin, you'll need to configure it under
 _Site administration -> Plugins -> Local plugins -> Twitter card_ in the _Settings_ block.
 
 # License
-The Twitter card Moodle local plugin is licenced under the GNU GPL v3 or later.
+The Twitter social icons used in the plugins list are licensed as described in https://about.twitter.com/en_us/company/brand-resources.html#social-icons
+
+The Twitter card Moodle local plugin is licenced under the GNU GPL v3 or later.<br/>
 Copyright (c) 2017 Matteo Scaramuccia <moodle@matteoscaramuccia.com>
 
     This program is free software: you can redistribute it and/or modify

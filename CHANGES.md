@@ -1,3 +1,6 @@
+# v1.0.1 (Build: 2017093000)
+- Improved test coverage (#5).
+
 # v1.0.0 (Build: 2017092901)
 - Do not emit the card when editing the course (#4).
 - Do not enable the Twitter summary card by default (#4).
