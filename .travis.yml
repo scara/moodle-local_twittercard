@@ -21,9 +21,14 @@ php:
   - 7.1
 
 env:
-  matrix:
-    - DB=pgsql  MOODLE_BRANCH=MOODLE_33_STABLE
-    - DB=mysqli MOODLE_BRANCH=MOODLE_33_STABLE
+  - DB=pgsql  MOODLE_BRANCH=MOODLE_33_STABLE
+  - DB=mysqli MOODLE_BRANCH=MOODLE_33_STABLE
+  - DB=mysqli MOODLE_BRANCH=master
+
+matrix:
+  exclude:
+    - php: 5.6
+      env: DB=mysqli MOODLE_BRANCH=master # Moodle 3.4+ requires 7.0.0
 
 before_install:
   - phpenv config-rm xdebug.ini

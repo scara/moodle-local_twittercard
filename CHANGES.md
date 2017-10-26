@@ -1,3 +1,6 @@
+# v1.0.2 (Build: 2017102700)
+- Ready for Moodle 3.4beta (Build: 20171025).
+
 # v1.0.1 (Build: 2017093000)
 - Improved test coverage (#5).
 
