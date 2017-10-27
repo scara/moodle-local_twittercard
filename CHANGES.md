@@ -1,3 +1,6 @@
+# v1.0.3 (Build: 2017111200)
+- Added PHP 7.2 to the tested env matrix: Moodle 3.4 supports it.
+
 # v1.0.2 (Build: 2017102700)
 - Ready for Moodle 3.4beta (Build: 20171025).
 
