@@ -47,6 +47,6 @@ if ($hassiteconfig) {
     $title = get_string('twittersite', 'local_twittercard');
     $description = get_string('twittersite_help', 'local_twittercard');
     $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_NOTAGS);
     $settings->add($setting);
 }

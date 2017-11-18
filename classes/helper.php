@@ -59,6 +59,9 @@ class helper {
         if ($sectionno != 0) {
             return null;
         }
+        if (empty($section->summary)) {
+            return null;
+        }
 
         $sectiontext = file_rewrite_pluginfile_urls($section->summary, 'pluginfile.php',
             $context->id, 'course', 'section', $section->id);;

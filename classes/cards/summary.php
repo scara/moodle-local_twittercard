@@ -93,6 +93,12 @@ class summary {
      */
     public function __construct($twittertitle, $twitterdescription,
                                 $twittersite = null, $twitterimage = null, $twitterimagealt = null) {
+        // Security cleanups.
+        $twittertitle = strip_tags($twittertitle);
+        $twitterdescription = strip_tags($twitterdescription);
+        $twittersite = strip_tags($twittersite);
+        $twitterimagealt = strip_tags($twitterimagealt);
+
         // Sanity checks.
         if (empty($twittertitle) && empty($twitterdescription)) {
             throw new \InvalidArgumentException('twitter:title and twitter:description are required');

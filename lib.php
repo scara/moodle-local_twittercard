@@ -45,32 +45,34 @@ function local_twittercard_before_standard_html_head() {
     // Trap any catchable error.
     try {
         $enabled = (bool)get_config('local_twittercard', 'enabled');
+        if (!$enabled) {
+            return '';
+        }
+
         list($context, $course, $cm) = get_context_info_array($PAGE->context->id);
 
         // Sanity checks.
         // 1. Do not emit the card if we're not looking at a course.
-        if ($enabled && empty($course)) {
-            $enabled = false;
+        if (empty($course)) {
+            return '';
         }
         // 2. Do not emit the card if we're looking at e.g. an activity in a course.
-        if ($enabled && !empty($cm)) {
-            $enabled = false;
+        if (!empty($cm)) {
+            return '';
         }
         // 3. Do not emit the card if we're editing the course.
-        if ($enabled && $PAGE->user_is_editing()) {
-            $enabled = false;
+        if ($PAGE->user_is_editing()) {
+            return '';
         }
         // 4. Do not emit the card if we're editing the course settings.
         $courseediturlpath = 'course/edit.php';
-        if ($enabled && (substr($PAGE->url->get_path(), -strlen($courseediturlpath)) === $courseediturlpath)) {
-            $enabled = false;
+        if (substr($PAGE->url->get_path(), -strlen($courseediturlpath)) === $courseediturlpath) {
+            return '';
         }
 
-        if ($enabled) {
-            $card = \local_twittercard\helper::create_card($context, $course);
-            if (!empty($card)) {
-                return $card;
-            }
+        $card = \local_twittercard\helper::create_card($context, $course);
+        if (!empty($card)) {
+            return $card;
         }
     } finally {
         // Do nothing here.

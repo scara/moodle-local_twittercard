@@ -37,7 +37,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
      *
      * @return array The type-value pairs fixture.
      */
-    public function test_successful_creating_provider() {
+    public function successful_creating_provider() {
         return array(
             [
                 'title', 'description', '@site', 'http://example.org/path/to/img.png', 'imagealt',
@@ -181,7 +181,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
     /**
      * This is a test for successfully creating Twitter summary cards.
      *
-     * @dataProvider test_successful_creating_provider
+     * @dataProvider successful_creating_provider
      *
      * @param null|string $twittertitle Tag twitter:title
      * @param null|string $twitterdescription Tag twitter:description
@@ -203,7 +203,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
      *
      * @return array The type-value pairs fixture.
      */
-    public function test_successful_creating_multilang_provider() {
+    public function successful_creating_multilang_provider() {
         return array(
             [
                 '<span lang="en" class="multilang">English</span><span lang="fr" class="multilang">Italian</span> title',
@@ -213,12 +213,8 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
                 [
                     "<meta name='twitter:card' content='summary' />\n",
                     "<meta name='twitter:site' content='@site' />\n",
-                    "<meta name='twitter:title' content='&lt;span lang=&quot;en&quot; class=&quot;multilang&quot;&gt;" .
-                        "English&lt;/span&gt;&lt;span lang=&quot;fr&quot; class=&quot;multilang&quot;&gt;Italian&lt;/span&gt;" .
-                        " title' />\n",
-                    "<meta name='twitter:description' content='&lt;span lang=&quot;en&quot; class=&quot;multilang&quot;&gt;" .
-                        "English&lt;/span&gt;&lt;span lang=&quot;fr&quot; class=&quot;multilang&quot;&gt;Italian&lt;/span&gt;" .
-                        " description' />\n",
+                    "<meta name='twitter:title' content='EnglishItalian title' />\n",
+                    "<meta name='twitter:description' content='EnglishItalian description' />\n",
                     "<meta name='twitter:image' content='http://example.org/path/to/img.png' />\n",
                     "<meta name='twitter:image:alt' content='imagealt' />\n",
                 ]
@@ -229,7 +225,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
     /**
      * This is a test for successfully creating Twitter summary cards when using multi-language content.
      *
-     * @dataProvider test_successful_creating_multilang_provider
+     * @dataProvider successful_creating_multilang_provider
      *
      * @param null|string $twittertitle Tag twitter:title
      * @param null|string $twitterdescription Tag twitter:description
@@ -259,7 +255,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
      *
      * @return array The type-value pairs fixture.
      */
-    public function test_failing_creating_provider() {
+    public function failing_creating_provider() {
         return array(
             [
                 null, null, null, null, null,
@@ -291,7 +287,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
     /**
      * This is a test for when Twitter summary cards creation should fail.
      *
-     * @dataProvider test_failing_creating_provider
+     * @dataProvider failing_creating_provider
      * @expectedException InvalidArgumentException
      *
      * @param null|string $twittertitle Tag twitter:title
