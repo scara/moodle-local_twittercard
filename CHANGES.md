@@ -1,3 +1,6 @@
+# v1.0.4 (Build: 2017121000)
+- Fixed an error when the course summary is not provided.
+
 # v1.0.3 (Build: 2017111200)
 - Added PHP 7.2 to the tested env matrix: Moodle 3.4 supports it.
 
