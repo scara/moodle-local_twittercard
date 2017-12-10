@@ -45,6 +45,19 @@ class local_twittercard_helper_testcase extends advanced_testcase {
     public function test_create_card() {
         global $DB;
 
+        // Create a course without a summary.
+        $course = $this->getDataGenerator()->create_course(array(
+            'fullname' => 'title',
+            'summary' => ''
+        ));
+        $context = context_course::instance($course->id);
+
+        $this->assertEquals(
+            "<meta name='twitter:card' content='summary' />\n" .
+                "<meta name='twitter:title' content='title' />\n" .
+                "<meta name='twitter:description' content='title' />\n",
+            \local_twittercard\helper::create_card($context, $course));
+
         // Create a course.
         $course = $this->getDataGenerator()->create_course(array(
             'fullname' => 'title',

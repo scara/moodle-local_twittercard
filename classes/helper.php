@@ -106,9 +106,12 @@ class helper {
             $coursetitle = format_string($coursetitle, true, array('context' => \context_system::instance()));
 
             // Tag twitter:description (required) - Description of content.
-            $coursedescr = format_text($course->summary, FORMAT_HTML,
-                array('context' => \context_system::instance(), 'newlines' => false));
-            $coursedescr = html_to_text($coursedescr, -1, false);
+            $coursedescr = $coursetitle;
+            if (!empty($course->summary)) {
+                $coursedescr = format_text($course->summary, FORMAT_HTML,
+                    array('context' => \context_system::instance(), 'newlines' => false));
+                $coursedescr = html_to_text($coursedescr, -1, false);
+            }
 
             // Tag twitter:image (optional) - URL of image to use in the card.
             // JPG, PNG, WEBP and GIF formats are supported.
