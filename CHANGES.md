@@ -1,3 +1,6 @@
+# v1.1.0 (Build: 2018040900)
+- Implemented the Moodle Privacy API
+
 # v1.0.4 (Build: 2017121000)
 - Fixed an error when the course summary is not provided.
 

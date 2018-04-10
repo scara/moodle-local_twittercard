@@ -63,6 +63,10 @@ Copyright (c) 2017 Matteo Scaramuccia <moodle@matteoscaramuccia.com>
 
 # Known issues
 - The first image added into section 0 of a course must be publicly accessible.
-
+- This plugin doesn't automagically log the
+[Twitterbot](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#url-crawling-caching)
+User-Agent (`"Twitterbot/1.0"`) in ([yet](https://github.com/scara/moodle-local_twittercard/issues/10)) so you need
+to take care of guest access in those courses exposed via a Twitter card.
+More details at [MDL-61586](https://tracker.moodle.org/browse/MDL-61586).
 # TODO
 - Investigate the opportunity to implement more Twitter cards.

@@ -30,6 +30,7 @@ defined('MOODLE_INTERNAL') || die();
 $string['enabled'] = 'Enabled';
 $string['enabled_help'] = 'Enable a Twitter summary card for courses.';
 $string['pluginname'] = 'Twitter card';
+$string['privacy:metadata'] = 'The Twitter Card local plugin displays information from the Course, but does not effect or store any data itself.';
 $string['twittercard'] = 'Twitter card';
 $string['twittersite'] = 'Twitter site';
 $string['twittersite_help'] = 'The Twitter @username of website the card should be attributed to.';
