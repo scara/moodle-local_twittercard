@@ -1,8 +1,11 @@
+# v1.1.1 (Build: 2018082500)
+- [Tests] Replaced deprecated Behat step (#18).
+
 # v1.1.0 (Build: 2018040900)
-- Implemented the Moodle Privacy API
+- Implemented the Moodle Privacy API (#15, #17).
 
 # v1.0.4 (Build: 2017121000)
-- Fixed an error when the course summary is not provided.
+- Fixed an error when the course summary is not provided (#13).
 
 # v1.0.3 (Build: 2017111200)
 - Added PHP 7.2 to the tested env matrix: Moodle 3.4 supports it.
