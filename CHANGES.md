@@ -1,3 +1,6 @@
+# v1.1.2 (Build: 2018120200)
+- [Tests] Added Moodle 3.6.x release branch.
+
 # v1.1.1 (Build: 2018082500)
 - [Tests] Replaced deprecated Behat step (#18).
 
