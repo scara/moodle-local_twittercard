@@ -33,6 +33,8 @@ matrix:
     - php: 5.6
       env: DB=mysqli MOODLE_BRANCH=MOODLE_33_STABLE # Moodle 3.4+ requires 7.0+
   exclude:
+    - php: 7.0
+      env: DB=mysqli MOODLE_BRANCH=master # Moodle 3.7+ requires 7.1+
     - php: 7.2
       env: DB=mysqli MOODLE_BRANCH=MOODLE_33_STABLE
     - php: 7.2

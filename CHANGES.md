@@ -1,3 +1,6 @@
+# vTBD (Build: TBD)
+- [Tests] Moodle 3.7 requires PHP 7.1+ ([MDL-63276](https://tracker.moodle.org/browse/MDL-63276)).
+
 # v1.1.2 (Build: 2018120200)
 - [Tests] Added Moodle 3.6.x release branch.
 
