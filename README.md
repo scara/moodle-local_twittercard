@@ -1,5 +1,5 @@
 ![Build status: master](https://travis-ci.org/scara/moodle-local_twittercard.svg?branch=master)
-![PHP](https://img.shields.io/badge/PHP-v5.6%20%2F%20v7.0%20%2F%20v7.1%20%2F%20v7.2-blue.svg)
+![PHP](https://img.shields.io/badge/PHP-v5.6%20%2F%20v7.0%20%2F%20v7.1%20%2F%20v7.2%20%2F%20v7.3-blue.svg)
 ![Moodle](https://img.shields.io/badge/Moodle-v3.3%20to%20v3.7-orange.svg)
 
 # Moodle Twitter card local plugin

@@ -38,6 +38,8 @@ defined('MOODLE_INTERNAL') || die();
  * The callback must always return a string containing valid html head content.
  *
  * Implemented in MDL-53978 (Moodle 3.3).
+ *
+ * @return string A string containing the Twitter card; otherwise, an empty string.
  */
 function local_twittercard_before_standard_html_head() {
     global $PAGE;

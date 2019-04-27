@@ -1,8 +1,9 @@
 # vTBD (Build: TBD)
-- [Tests] Switch to OpenJDK headless JRE 8: [blackboard-open-source/moodle-plugin-ci#83](https://github.com/blackboard-open-source/moodle-plugin-ci/issues/83).
-- [Tests] Project organization [renamed](https://github.com/blackboard-open-source/moodle-plugin-ci/commit/cdd8bb665d853b3b42f99a29c74a5e02fd9b4509#diff-b4ef8fa7c78dc63432f64a355dbb9ffd) for `moodle-plugin-ci` repo.
 - [Tests] Moodle 3.7 requires PHP 7.1+ ([MDL-63276](https://tracker.moodle.org/browse/MDL-63276)).
 - [Tests] Moodle 3.7+ runs on PHP 7.3 ([MDL-63420](https://tracker.moodle.org/browse/MDL-63420)).
+- [Tests] Project organization [renamed](https://github.com/blackboard-open-source/moodle-plugin-ci/commit/cdd8bb665d853b3b42f99a29c74a5e02fd9b4509#diff-b4ef8fa7c78dc63432f64a355dbb9ffd) for `moodle-plugin-ci` repo.
+- [Tests] Switch to OpenJDK headless JRE 8: [blackboard-open-source/moodle-plugin-ci#83](https://github.com/blackboard-open-source/moodle-plugin-ci/issues/83).
+- Fixed PHPDoc.
 
 # v1.1.2 (Build: 2018120200)
 - [Tests] Added Moodle 3.6.x release branch.
