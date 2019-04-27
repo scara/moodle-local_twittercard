@@ -76,8 +76,9 @@ function local_twittercard_before_standard_html_head() {
         if (!empty($card)) {
             return $card;
         }
-    } finally {
+    } catch (Exception $e) {
         // Do nothing here.
+        return '';
     }
 
     return '';
