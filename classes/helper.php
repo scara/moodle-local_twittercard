@@ -132,8 +132,9 @@ class helper {
             if (!empty($metatags)) {
                 return join('', $metatags);
             }
-        } finally {
+        } catch (Exception $e) {
             // Do nothing here.
+            return null;
         }
 
         return null;
