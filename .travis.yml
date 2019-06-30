@@ -2,12 +2,20 @@ language: php
 
 sudo: false
 
+# Move from what was the default LTS distro, trusty, to the next supported one, xenial.
+dist: xenial
+# Services are now disabled by default.
+# Ref: https://docs.travis-ci.com/user/reference/xenial/#differences-from-the-trusty-images
+services:
+  - mysql
+  - postgresql
+
 addons:
   firefox: "47.0.1"
-  postgresql: "9.3"
   apt:
     packages:
       - openjdk-8-jre-headless
+      - postgresql-9.3
 
 cache:
   directories:
