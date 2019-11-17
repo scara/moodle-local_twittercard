@@ -1,3 +1,6 @@
+# v1.1.4 (Build: 2019111700)
+- [Tests] Added Moodle 3.8.x release branch.
+
 # v1.1.3 (Build: 2019051900)
 - [Tests] Moodle 3.7 requires PHP 7.1+ ([MDL-63276](https://tracker.moodle.org/browse/MDL-63276)).
 - [Tests] Moodle 3.7+ runs on PHP 7.3 ([MDL-63420](https://tracker.moodle.org/browse/MDL-63420)).
