@@ -2,6 +2,7 @@
 - [Tests] Moodle 3.9 requires PHP 7.2+ ([MDL-65809](https://tracker.moodle.org/browse/MDL-65809)).
 - [Tests] Moodle 3.8.3+ supports PHP 7.4 ([MDL-66260](https://tracker.moodle.org/browse/MDL-66260)).
 - [Tests] Moodle _next_, `master` branch, only on `pgsql`.
+- [Tests] Moodle 3.5.13+, 3.7.7+, 3.8.4+, 3.9+ requires Node v14 (ready for `lts/fermium`) ([MDL-66109](https://tracker.moodle.org/browse/MDL-66109)).
 
 # v1.1.4 (Build: 2019111700)
 - [Tests] Added Moodle 3.8.x release branch.
