@@ -9,12 +9,11 @@ dist: xenial
 services:
   - mysql
   - postgresql
+  #- docker
 
 addons:
-  firefox: "47.0.1"
   apt:
     packages:
-      - openjdk-8-jre-headless
       - postgresql-9.3
 
 cache:
@@ -72,6 +71,11 @@ before_install:
   - cd ../..
   - composer create-project -n --no-dev --prefer-dist blackboard-open-source/moodle-plugin-ci ci ^2
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
+  # Start Selenium Standalone with Firefox (i.e. default Behat profile) installed.
+  #- docker run -d -p 4444:4444 --net=host \
+  #  -v /dev/shm:/dev/shm \
+  #  -v $HOME/build/moodle:$HOME/build/moodle \
+  #  selenium/standalone-firefox:2.53.1 # or selenium/standalone-chrome:3
 
 install:
   - moodle-plugin-ci install

@@ -3,6 +3,10 @@
 - [Tests] Moodle 3.8.3+ supports PHP 7.4 ([MDL-66260](https://tracker.moodle.org/browse/MDL-66260)).
 - [Tests] Moodle _next_, `master` branch, only on `pgsql`.
 - [Tests] Moodle 3.5.13+, 3.7.7+, 3.8.4+, 3.9+ requires Node v14 (ready for `lts/fermium`) ([MDL-66109](https://tracker.moodle.org/browse/MDL-66109)).
+- [Tests] Our Behat tests do not require JavaScript i.e. remove requirements for Selenium but be ready to activate
+          Selenium when it will be required. Refs:
+  - [moodle-plugin-ci/#110](https://github.com/blackboard-open-source/moodle-plugin-ci/issues/110).
+  - [moodle-plugin-ci/#116](https://github.com/blackboard-open-source/moodle-plugin-ci/issues/116)
 
 # v1.1.4 (Build: 2019111700)
 - [Tests] Added Moodle 3.8.x release branch.
