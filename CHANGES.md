@@ -1,4 +1,4 @@
-# v1.x.y (Build: YYYYMMDD00)
+# v1.1.5 (Build: 2020061500)
 - [Tests] Moodle 3.9 requires PHP 7.2+ ([MDL-65809](https://tracker.moodle.org/browse/MDL-65809)).
 - [Tests] Moodle 3.8.3+ supports PHP 7.4 ([MDL-66260](https://tracker.moodle.org/browse/MDL-66260)).
 - [Tests] Moodle _next_, `master` branch, only on `pgsql`.
@@ -7,6 +7,7 @@
           Selenium when it will be required. Refs:
   - [moodle-plugin-ci/#110](https://github.com/blackboard-open-source/moodle-plugin-ci/issues/110).
   - [moodle-plugin-ci/#116](https://github.com/blackboard-open-source/moodle-plugin-ci/issues/116)
+- [Tests] Added Moodle 3.9.x release branch.
 
 # v1.1.4 (Build: 2019111700)
 - [Tests] Added Moodle 3.8.x release branch.

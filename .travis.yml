@@ -34,6 +34,7 @@ env:
   - DB=mysqli MOODLE_BRANCH=MOODLE_36_STABLE NODE_VERSION=8.9
   - DB=mysqli MOODLE_BRANCH=MOODLE_37_STABLE NODE_VERSION=14.4
   - DB=mysqli MOODLE_BRANCH=MOODLE_38_STABLE NODE_VERSION=14.4
+  - DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE NODE_VERSION=14.4
   - DB=pgsql  MOODLE_BRANCH=master           NODE_VERSION=14.4
 
 matrix:
@@ -45,9 +46,13 @@ matrix:
     - php: 7.3
       env: DB=mysqli MOODLE_BRANCH=MOODLE_38_STABLE NODE_VERSION=14.4
     - php: 7.3
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE NODE_VERSION=14.4
+    - php: 7.3
       env: DB=pgsql  MOODLE_BRANCH=master           NODE_VERSION=14.4
     - php: 7.4
       env: DB=mysqli MOODLE_BRANCH=MOODLE_38_STABLE NODE_VERSION=14.4 # Moodle 3.8.3+ runs on PHP 7.4.
+    - php: 7.4
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE NODE_VERSION=14.4
     - php: 7.4
       env: DB=pgsql  MOODLE_BRANCH=master           NODE_VERSION=14.4
   exclude:
@@ -56,9 +61,13 @@ matrix:
     - php: 7.0
       env: DB=mysqli MOODLE_BRANCH=MOODLE_38_STABLE NODE_VERSION=14.4
     - php: 7.0
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE NODE_VERSION=14.4
+    - php: 7.0
       env: DB=pgsql  MOODLE_BRANCH=master           NODE_VERSION=14.4
     - php: 7.1
-      env: DB=pgsql  MOODLE_BRANCH=master           NODE_VERSION=14.4 # Moodle 3.9+ requires PHP 7.2+.
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE NODE_VERSION=14.4 # Moodle 3.9+ requires PHP 7.2+.
+    - php: 7.1
+      env: DB=pgsql  MOODLE_BRANCH=master           NODE_VERSION=14.4
     - php: 7.2
       env: DB=mysqli MOODLE_BRANCH=MOODLE_33_STABLE NODE_VERSION=8.9
     - php: 7.2
