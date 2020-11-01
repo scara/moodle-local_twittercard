@@ -288,7 +288,6 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
      * This is a test for when Twitter summary cards creation should fail.
      *
      * @dataProvider failing_creating_provider
-     * @expectedException InvalidArgumentException
      *
      * @param null|string $twittertitle Tag twitter:title
      * @param null|string $twitterdescription Tag twitter:description
@@ -299,6 +298,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
      */
     public function test_failing_creating($twittertitle, $twitterdescription, $twittersite,
                                           $twitterimage, $twitterimagealt, $excmessage) {
+        $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage($excmessage);
 
         $card = new \local_twittercard\cards\summary(

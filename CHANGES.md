@@ -1,4 +1,5 @@
 # v1.1.6 (Build: 202009dd00)
+- [Tests] Replace PHPUnit 8.5 deprecations
 - [Tests] Add PHPUnit 8 compatibility ([MDL-67673](https://tracker.moodle.org/browse/MDL-67673))
 - [Tests] Add support for `310` branch ([MDL-67415](https://tracker.moodle.org/browse/MDL-67415))
 - [Tests] Remove Moodle 3.3 from automated testing ([MDL-64725](https://tracker.moodle.org/browse/MDL-64725)).
