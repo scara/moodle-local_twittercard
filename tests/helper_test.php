@@ -35,7 +35,7 @@ class local_twittercard_helper_testcase extends advanced_testcase {
     /**
      * Test set up.
      */
-    public function setUp() {
+    public function setUp(): void {
         $this->resetAfterTest();
     }
 

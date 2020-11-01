@@ -19,9 +19,13 @@ cache:
     - $HOME/.nvm
 
 php:
-  - 7.0
+  # Cannot test with PHP 7.0 any more because PHPUnit 8 is now using the :void return type
+  # on all template methods, supported on 7.1+.
+  # Note that, still, the plugin will work OK, it's just the PHPUnit tests which cannot
+  # be executed with that PHP versions.
   - 7.1
   - 7.2
+  - 7.3
 
 env:
   # Cannot test with Moodle 3.3 any more because the new composer 2
@@ -38,16 +42,6 @@ env:
 
 matrix:
   include:
-    - php: 7.3
-      env: DB=mysqli MOODLE_BRANCH=MOODLE_37_STABLE # Moodle 3.7+ runs on PHP 7.3.
-    - php: 7.3
-      env: DB=mysqli MOODLE_BRANCH=MOODLE_38_STABLE
-    - php: 7.3
-      env: DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE
-    - php: 7.3
-      env: DB=mysqli MOODLE_BRANCH=MOODLE_310_STABLE
-    - php: 7.3
-      env: DB=pgsql  MOODLE_BRANCH=master
     - php: 7.4
       env: DB=mysqli MOODLE_BRANCH=MOODLE_38_STABLE # Moodle 3.8.3+ runs on PHP 7.4.
     - php: 7.4
@@ -57,22 +51,18 @@ matrix:
     - php: 7.4
       env: DB=pgsql  MOODLE_BRANCH=master
   exclude:
-    - php: 7.0
-      env: DB=mysqli MOODLE_BRANCH=MOODLE_37_STABLE # Moodle 3.7+ requires PHP 7.1+.
-    - php: 7.0
-      env: DB=mysqli MOODLE_BRANCH=MOODLE_38_STABLE
-    - php: 7.0
-      env: DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE
-    - php: 7.0
-      env: DB=pgsql  MOODLE_BRANCH=MOODLE_310_STABLE
-    - php: 7.0
-      env: DB=pgsql  MOODLE_BRANCH=master
     - php: 7.1
       env: DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE # Moodle 3.9+ requires PHP 7.2+.
     - php: 7.1
       env: DB=pgsql  MOODLE_BRANCH=MOODLE_310_STABLE
     - php: 7.1
       env: DB=pgsql  MOODLE_BRANCH=master
+    - php: 7.3
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_34_STABLE
+    - php: 7.3
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_35_STABLE
+    - php: 7.3
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_36_STABLE
 
 before_install:
   - phpenv config-rm xdebug.ini
