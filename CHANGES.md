@@ -1,4 +1,5 @@
 # v1.1.6 (Build: 202009dd00)
+- [Tests] Add support for `310` branch ([MDL-67415](https://tracker.moodle.org/browse/MDL-67415))
 - [Tests] Remove Moodle 3.3 from automated testing ([MDL-64725](https://tracker.moodle.org/browse/MDL-64725)).
 - [Tests] Bump travis to use `moodlehq/moodle-plugin-ci^3` ([Upgrading from 2.X to 3.0](https://moodlehq.github.io/moodle-plugin-ci/UPGRADE-3.0.html)).
 
