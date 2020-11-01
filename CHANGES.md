@@ -1,3 +1,6 @@
+# v1.1.6 (Build: 202009dd00)
+- [Tests] Bump travis to use `moodlehq/moodle-plugin-ci^3` ([Upgrading from 2.X to 3.0](https://moodlehq.github.io/moodle-plugin-ci/UPGRADE-3.0.html)).
+
 # v1.1.5 (Build: 2020061500)
 - [Tests] Moodle 3.9 requires PHP 7.2+ ([MDL-65809](https://tracker.moodle.org/browse/MDL-65809)).
 - [Tests] Moodle 3.8.3+ supports PHP 7.4 ([MDL-66260](https://tracker.moodle.org/browse/MDL-66260)).
