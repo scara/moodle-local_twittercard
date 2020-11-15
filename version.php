@@ -28,8 +28,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_twittercard';
-$plugin->version = 2020061500;
-$plugin->release = '1.1.5 (Build: 2020061500)';
+$plugin->version = 2020111500;
+$plugin->release = '1.1.6 (Build: 2020111500)';
 $plugin->requires = 2017051500;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->cron = 0;
