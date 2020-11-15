@@ -37,7 +37,8 @@ env:
   - DB=mysqli MOODLE_BRANCH=MOODLE_37_STABLE
   - DB=mysqli MOODLE_BRANCH=MOODLE_38_STABLE
   - DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE
-  - DB=pgsql  MOODLE_BRANCH=MOODLE_310_STABLE
+  - DB=mysqli MOODLE_BRANCH=MOODLE_310_STABLE
+  - DB=pgsql  MOODLE_BRANCH=MOODLE_311_STABLE
   - DB=pgsql  MOODLE_BRANCH=master
 
 matrix:
@@ -49,12 +50,16 @@ matrix:
     - php: 7.4
       env: DB=mysqli MOODLE_BRANCH=MOODLE_310_STABLE
     - php: 7.4
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_311_STABLE
+    - php: 7.4
       env: DB=pgsql  MOODLE_BRANCH=master
   exclude:
     - php: 7.1
       env: DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE # Moodle 3.9+ requires PHP 7.2+.
     - php: 7.1
-      env: DB=pgsql  MOODLE_BRANCH=MOODLE_310_STABLE
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_310_STABLE
+    - php: 7.1
+      env: DB=pgsql  MOODLE_BRANCH=MOODLE_311_STABLE
     - php: 7.1
       env: DB=pgsql  MOODLE_BRANCH=master
     - php: 7.3
