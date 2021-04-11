@@ -1,6 +1,11 @@
-name: Twittercard tests via Moodle CI framework
+name: Tests via Moodle CI framework
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  schedule:
+    # Weekly, @ 00:00 on Sunday (UTC).
+    - cron: '0 0 * * 0'
 
 jobs:
   test:

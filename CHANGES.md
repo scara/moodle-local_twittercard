@@ -1,4 +1,5 @@
 # v1.1.7 (Build: YYYYMMDD)
+- [Tests] Schedule weekly GHA runs
 - [Tests] Add GitHub Actions support
 
 # v1.1.6 (Build: 2020111500)
