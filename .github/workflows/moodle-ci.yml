@@ -48,55 +48,25 @@ jobs:
         exclude:
           # PHP 7.1 support since Moodle 3.7+.
           # Moodle 3.9+ requires PHP 7.2+.
-          - php: '7.1'
-            moodle-branch: 'MOODLE_39_STABLE'
-            database: mariadb
-          - php: '7.1'
-            moodle-branch: 'MOODLE_310_STABLE'
-            database: mariadb
-          - php: '7.1'
-            moodle-branch: 'MOODLE_311_STABLE'
-            database: mariadb
-          - php: '7.1'
-            moodle-branch: 'master'
-            database: mariadb
+          - { php: '7.1', moodle-branch: 'MOODLE_39_STABLE',  database: mariadb }
+          - { php: '7.1', moodle-branch: 'MOODLE_310_STABLE', database: mariadb }
+          - { php: '7.1', moodle-branch: 'MOODLE_311_STABLE', database: mariadb }
+          - { php: '7.1', moodle-branch: 'master',            database: mariadb }
           # Moodle 3.11+ requires PHP 7.3+.
-          - php: '7.2'
-            moodle-branch: 'MOODLE_311_STABLE'
-            database: mariadb
-          - php: '7.2'
-            moodle-branch: 'master'
-            database: mariadb
+          - { php: '7.2', moodle-branch: 'MOODLE_311_STABLE', database: mariadb }
+          - { php: '7.2', moodle-branch: 'master',            database: mariadb }
           # PHP 7.3 support since Moodle 3.6.4+.
-          - php: '7.3'
-            moodle-branch: 'MOODLE_34_STABLE'
-            database: mariadb
-          - php: '7.3'
-            moodle-branch: 'MOODLE_35_STABLE'
-            database: mariadb
+          - { php: '7.3', moodle-branch: 'MOODLE_34_STABLE',  database: mariadb }
+          - { php: '7.3', moodle-branch: 'MOODLE_35_STABLE',  database: mariadb }
           # PHP 7.4 support since Moodle 3.8.3+.
-          - php: '7.4'
-            moodle-branch: 'MOODLE_34_STABLE'
-            database: mariadb
-          - php: '7.4'
-            moodle-branch: 'MOODLE_35_STABLE'
-            database: mariadb
-          - php: '7.4'
-            moodle-branch: 'MOODLE_36_STABLE'
-            database: mariadb
-          - php: '7.4'
-            moodle-branch: 'MOODLE_37_STABLE'
-            database: mariadb
+          - { php: '7.4', moodle-branch: 'MOODLE_34_STABLE',  database: mariadb }
+          - { php: '7.4', moodle-branch: 'MOODLE_35_STABLE',  database: mariadb }
+          - { php: '7.4', moodle-branch: 'MOODLE_36_STABLE',  database: mariadb }
+          - { php: '7.4', moodle-branch: 'MOODLE_37_STABLE',  database: mariadb }
         include:
-          - php: '7.4'
-            moodle-branch: 'MOODLE_310_STABLE'
-            database: pgsql
-          - php: '7.4'
-            moodle-branch: 'MOODLE_311_STABLE'
-            database: pgsql
-          - php: '7.4'
-            moodle-branch: 'master'
-            database: pgsql
+          - { php: '7.4', moodle-branch: 'MOODLE_310_STABLE', database: pgsql }
+          - { php: '7.4', moodle-branch: 'MOODLE_311_STABLE', database: pgsql }
+          - { php: '7.4', moodle-branch: 'master',            database: pgsql }
 
     steps:
       - name: Check out repository code
@@ -108,7 +78,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: mbstring, gd, zip
+          extensions: gd, mbstring, pgsql, soap, xmlrpc, zip
           coverage: none
 
       - name: Initialise moodle-plugin-ci

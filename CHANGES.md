@@ -1,4 +1,5 @@
 # v1.1.7 (Build: YYYYMMDD)
+- [Tests] Replace build status badge w/ GHA one
 - [Tests] Schedule weekly GHA runs
 - [Tests] Add GitHub Actions support
 
