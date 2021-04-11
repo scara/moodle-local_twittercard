@@ -1,3 +1,6 @@
+# v1.1.7 (Build: YYYYMMDD)
+- [Tests] Add GitHub Actions support
+
 # v1.1.6 (Build: 2020111500)
 - [Tests] Add _next_ Moodle under parallel development, 3.11.x on `MOODLE_311_STABLE`
 - [Tests] Replace PHPUnit 8.5 deprecations
