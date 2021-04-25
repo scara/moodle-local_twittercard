@@ -28,9 +28,6 @@ php:
   - 7.3
 
 env:
-  # Cannot test with Moodle 3.3 any more because the new composer 2
-  # does require all components to be named properly (case-sensitively) and
-  # that branch have phpunit/Dbunit, failing. See MDL-64725.
   - DB=mysqli MOODLE_BRANCH=MOODLE_34_STABLE
   - DB=mysqli MOODLE_BRANCH=MOODLE_35_STABLE
   - DB=mysqli MOODLE_BRANCH=MOODLE_36_STABLE
