@@ -2,8 +2,8 @@
 [![GitHub Release Date](https://img.shields.io/github/release-date/scara/moodle-local_twittercard.svg)](https://github.com/scara/moodle-local_twittercard/releases/latest)
 [![GitHub last commit](https://img.shields.io/github/last-commit/scara/moodle-local_twittercard.svg)](https://github.com/scara/moodle-local_twittercard/commits/master)
 [![CI build status: master](https://github.com/scara/moodle-local_twittercard/actions/workflows/moodle-ci.yml/badge.svg?branch=master)](https://github.com/scara/moodle-local_twittercard/actions/workflows/moodle-ci.yml?query=branch%3Amaster)
-![PHP](https://img.shields.io/badge/PHP-v5.6%20%2F%20v7.0%20to%20v7.4-blue.svg)
-![Moodle](https://img.shields.io/badge/Moodle-v3.3%20to%20v3.10-orange.svg)
+![PHP](https://img.shields.io/badge/PHP-v7.0%20to%20v7.4-blue.svg)
+![Moodle](https://img.shields.io/badge/Moodle-v3.4%20to%20v3.10-orange.svg)
 
 # Moodle Twitter card local plugin
 This Moodle local plugin emits a Twitter summary card for courses.
@@ -18,7 +18,7 @@ If you want to deepen what a Twitter Summary Card is, more details are available
 - https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/markup
 
 # Requirements
-- Moodle 3.3 (build 2017051500 or later)
+- Moodle 3.4 (build 2017111300 or later)
 
 # Installation
 To install using _git_, type this command in the root of your Moodle installation:

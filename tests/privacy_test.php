@@ -36,10 +36,6 @@ class local_twittercard_privacy_testcase extends advanced_testcase {
      * Tests that local_twittercard actually implements the Privacy API null_provider.
      */
     public function test_null_provider() {
-        if (!interface_exists('\core_privacy\local\metadata\null_provider')) {
-            $this->markTestSkipped('The Moodle code does not implement the Moodle Privacy API');
-        }
-
         $this->assertTrue(class_exists('\local_twittercard\privacy\provider'));
         $this->assertEquals(
             [ 'core_privacy\local\metadata\null_provider' => 'core_privacy\local\metadata\null_provider' ],
