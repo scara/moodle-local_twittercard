@@ -1,4 +1,4 @@
-# v1.1.7 (Build: YYYYMMDD)
+# v1.1.7 (Build: 2021050000)
 - Remove old (`MOODLE_33_STABLE`) `\core_privacy\local\legacy_polyfill` use
 - Add mode badges
 - [Tests] Replace build status badge w/ GHA one
