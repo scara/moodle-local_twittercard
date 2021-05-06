@@ -1,4 +1,5 @@
 # v1.1.7 (Build: 2021050000)
+- [Tests] Moodle 3.11 supports PHP 8.0 ([MDL-70745](https://tracker.moodle.org/browse/MDL-70745))
 - Remove old (`MOODLE_33_STABLE`) `\core_privacy\local\legacy_polyfill` use
 - Add mode badges
 - [Tests] Replace build status badge w/ GHA one

@@ -50,6 +50,10 @@ matrix:
       env: DB=mysqli MOODLE_BRANCH=MOODLE_311_STABLE
     - php: 7.4
       env: DB=pgsql  MOODLE_BRANCH=master
+    - php: 8.0
+      env: DB=mysqli MOODLE_BRANCH=MOODLE_311_STABLE # Moodle 3.11 runs on PHP 8.0.
+    - php: 8.0
+      env: DB=pgsql  MOODLE_BRANCH=master
   exclude:
     - php: 7.1
       env: DB=mysqli MOODLE_BRANCH=MOODLE_39_STABLE # Moodle 3.9+ requires PHP 7.2+.
