@@ -35,7 +35,7 @@ jobs:
         # Cannot test with PHP 7.0 any more because PHPUnit 8 is now using the ':void' return type
         # on all template methods, supported on 7.1+.
         # Note that, still, the plugin will work OK, it's just the PHPUnit tests which cannot
-        # be executed with that PHP versions - though at some point in the future some regressions could exist ;).
+        # be executed with that PHP version - though at some point in the future some regressions could exist ;).
         php: ['7.1', '7.2', '7.3', '7.4']
         moodle-branch: [
             'MOODLE_34_STABLE', 'MOODLE_35_STABLE', 'MOODLE_36_STABLE', 'MOODLE_37_STABLE',
@@ -80,6 +80,8 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: gd, mbstring, pgsql, soap, xmlrpc, zip
+          # Minimum requirement for PHP 8.0. Ref.: MDL-71390.
+          ini-values: max_input_vars=5000
           coverage: none
 
       - name: Initialise moodle-plugin-ci
