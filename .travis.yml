@@ -71,6 +71,9 @@ matrix:
       env: DB=mysqli MOODLE_BRANCH=MOODLE_36_STABLE
 
 before_install:
+  # PHP 8.0 support since Moodle 3.11+:
+  # - minimum 'max_input_vars' requirement for PHP 8.0. Ref.: MDL-71390
+  - if [[ ${TRAVIS_PHP_VERSION:0:1} -gt 7 ]]; then echo 'max_input_vars=5000' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi
   - phpenv config-rm xdebug.ini
   - cd ../..
   - composer create-project -n --no-dev --prefer-dist moodlehq/moodle-plugin-ci ci ^3

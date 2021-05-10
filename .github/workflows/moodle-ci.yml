@@ -81,7 +81,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: gd, mbstring, pgsql, soap, xmlrpc, zip
+          extensions: gd, mbstring, mysqli, pgsql, soap, xmlrpc, zip
           ini-values: ${{ matrix.php-ini-values }}
           coverage: none
 
