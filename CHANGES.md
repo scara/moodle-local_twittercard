@@ -1,10 +1,10 @@
-# v1.1.7 (Build: 2021050000)
+# v1.1.7 (Build: 2021052300)
 - [Tests] Align Travis CI to GitHub Actions PHP 8.0 configuration
 - [Tests] Limit 'max_input_vars = 5000' requiment to PHP 8.0 ([MDL-71390](https://tracker.moodle.org/browse/MDL-71390))
 - [Tests] PHP 8.0 requires 'max_input_vars = 5000' ([MDL-71390](https://tracker.moodle.org/browse/MDL-71390))
 - [Tests] Moodle 3.11 supports PHP 8.0 ([MDL-70745](https://tracker.moodle.org/browse/MDL-70745))
 - Remove old (`MOODLE_33_STABLE`) `\core_privacy\local\legacy_polyfill` use
-- Add mode badges
+- Add more badges
 - [Tests] Replace build status badge w/ GHA one
 - [Tests] Schedule weekly GHA runs
 - [Tests] Add GitHub Actions support
