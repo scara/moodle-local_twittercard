@@ -1,4 +1,4 @@
-# v1.1.7 (Build: 2021050000)
+# v1.1.7 (Build: 2021052300)
 - [Tests] Align Travis CI to GitHub Actions PHP 8.0 configuration
 - [Tests] Limit 'max_input_vars = 5000' requiment to PHP 8.0 ([MDL-71390](https://tracker.moodle.org/browse/MDL-71390))
 - [Tests] PHP 8.0 requires 'max_input_vars = 5000' ([MDL-71390](https://tracker.moodle.org/browse/MDL-71390))
