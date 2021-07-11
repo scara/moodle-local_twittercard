@@ -5,6 +5,10 @@ sudo: false
 # Move from what was the default LTS distro, trusty, to the next supported one, xenial.
 os: linux
 dist: xenial
+
+addons:
+  postgresql: "10"
+
 # Services are now disabled by default.
 # Ref: https://docs.travis-ci.com/user/reference/xenial/#differences-from-the-trusty-images .
 services:

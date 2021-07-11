@@ -1,3 +1,6 @@
+# Unreleased (Build: YYYMMDD00)
+- [Tests] PostgreSQL 10 is now required by Moodle 4.0 ([MDL-70594](https://tracker.moodle.org/browse/MDL-70594))
+
 # v1.1.7 (Build: 2021052300)
 - [Tests] Align Travis CI to GitHub Actions PHP 8.0 configuration
 - [Tests] Limit 'max_input_vars = 5000' requiment to PHP 8.0 ([MDL-71390](https://tracker.moodle.org/browse/MDL-71390))
