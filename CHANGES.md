@@ -1,9 +1,10 @@
-# Unreleased (Build: YYYMMDD00)
+# Unreleased (Build: YYYYMMDD00)
+- [Tests] Make `mariadb:10.5` sticky ([MDL-72131](https://tracker.moodle.org/browse/MDL-72131))
 - [Tests] PostgreSQL 10 is now required by Moodle 4.0 ([MDL-70594](https://tracker.moodle.org/browse/MDL-70594))
 
 # v1.1.7 (Build: 2021052300)
 - [Tests] Align Travis CI to GitHub Actions PHP 8.0 configuration
-- [Tests] Limit 'max_input_vars = 5000' requiment to PHP 8.0 ([MDL-71390](https://tracker.moodle.org/browse/MDL-71390))
+- [Tests] Limit 'max_input_vars = 5000' requirement to PHP 8.0 ([MDL-71390](https://tracker.moodle.org/browse/MDL-71390))
 - [Tests] PHP 8.0 requires 'max_input_vars = 5000' ([MDL-71390](https://tracker.moodle.org/browse/MDL-71390))
 - [Tests] Moodle 3.11 supports PHP 8.0 ([MDL-70745](https://tracker.moodle.org/browse/MDL-70745))
 - Remove old (`MOODLE_33_STABLE`) `\core_privacy\local\legacy_polyfill` use
