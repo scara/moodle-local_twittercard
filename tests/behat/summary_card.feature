@@ -60,7 +60,7 @@ Feature: A Twitter summary card is added into the page
       | enabled | 1 | local_twittercard |
     And I log in as "admin"
     When I am on "TC Course 1" course homepage
-    And I navigate to "Edit settings" in current page administration
+    And I navigate to _Edit settings_ in current page administration
     Then I should see "Edit course settings"
     And I should not see the following meta tags:
       | metaname            |

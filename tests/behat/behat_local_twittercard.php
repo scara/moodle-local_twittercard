@@ -92,7 +92,31 @@ class behat_local_twittercard extends behat_base {
             // Search for the name.
             $xpath = "//meta[@name='$key']";
 
-            $this->execute('behat_general::should_not_exist', array($xpath, 'xpath_element'));
+            $this->execute('behat_general::should_not_exist', [$xpath, 'xpath_element']);
         }
+    }
+
+    /**
+     * Go to current page setting "Edit settings"
+     *
+     * This can be used on front page, course, category or modules pages.
+     *
+     * @Given /^I navigate to _Edit settings_ in current page administration$/
+     *
+     * @throws ExpectationException
+     * @return void
+     */
+    public function i_navigate_to_edit_settings_in_current_page_administration() {
+        global $CFG;
+
+        $branch = (int)$CFG->branch;
+        $nodetext = 'Settings';
+
+        // HACK - Due to MDL-72093 (related to MDL-69588) we need create this hack to stick with one-branch deploy.
+        if ($branch < 400) {
+            $nodetext = 'Edit settings';
+        }
+
+        $this->execute("behat_navigation::i_navigate_to_in_current_page_administration", [$nodetext]);
     }
 }
