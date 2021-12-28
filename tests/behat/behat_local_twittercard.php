@@ -119,4 +119,31 @@ class behat_local_twittercard extends behat_base {
 
         $this->execute("behat_navigation::i_navigate_to_in_current_page_administration", [$nodetext]);
     }
+
+    /**
+     * Go to the enrolment methods of the Course page
+     *
+     * This can be used on course pages.
+     *
+     * @When /^I am on the _Enrolment methods_ of "(?<identifier>[^"]*)" page administration$/
+     *
+     * @param string $identifier identifies the particular page. E.g. 'TC Course 1'.
+     * @throws Exception if the specified page cannot be determined.
+     * @return void
+     */
+    public function i_am_on_enrolment_methods_of_page_administration(string $identifier) {
+        global $CFG;
+
+        $branch = (int)$CFG->branch;
+        // HACK - Due to MDL-72090 we need create this hack to stick with one-branch deploy.
+        if ($branch < 400) {
+            // And I am on "TC Course Guest" course homepage.
+            $this->execute('behat_navigation::i_am_on_course_homepage', [$identifier]);
+            // And I navigate to "Users > Enrolment methods" in current page administration.
+            $this->execute('behat_navigation::i_navigate_to_in_current_page_administration', ['Users > Enrolment methods']);
+        } else {
+            // And I am on the "Course 2" "enrolment methods" page.
+            $this->execute('behat_navigation::i_am_on_page_instance', [$identifier, 'enrolment methods']);
+        }
+    }
 }

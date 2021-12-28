@@ -1,4 +1,5 @@
 # Unreleased (Build: YYYYMMDD00)
+- [Tests] Add local Behat navigation step to stick with one-branch deploy ([MDL-72090](https://tracker.moodle.org/browse/MDL-72090)
 - [Tests] Remove Travis CI support
 - [Tests] Hack core Behat navigation step to stick with one-branch deploy ([MDL-72093](https://tracker.moodle.org/browse/MDL-72093))
 - [Tests] Make `mariadb:10.5` sticky ([MDL-72131](https://tracker.moodle.org/browse/MDL-72131))

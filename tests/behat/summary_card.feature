@@ -133,8 +133,7 @@ Feature: A Twitter summary card is added into the page
     And the following config values are set as admin:
       | enabled | 1 | local_twittercard |
     And I log in as "admin"
-    And I am on "TC Course Guest" course homepage
-    And I navigate to "Users > Enrolment methods" in current page administration
+    And I am on the _Enrolment methods_ of "TC Course Guest" page administration
     And I click on "Edit" "link" in the "Guest access" "table_row"
     And I set the following fields to these values:
       | Allow guest access | Yes |
