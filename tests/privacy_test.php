@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace local_twittercard\tests;
+
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -31,7 +33,7 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright  2017 Matteo Scaramuccia <moodle@matteoscaramuccia.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class local_twittercard_privacy_testcase extends advanced_testcase {
+class privacy_test extends \advanced_testcase {
     /**
      * Tests that local_twittercard actually implements the Privacy API null_provider.
      */

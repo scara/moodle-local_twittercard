@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace local_twittercard\tests;
+
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -31,7 +33,7 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright  2017 Matteo Scaramuccia <moodle@matteoscaramuccia.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class local_twittercard_helper_testcase extends advanced_testcase {
+class helper_test extends \advanced_testcase {
     /**
      * Test set up.
      */
@@ -50,7 +52,7 @@ class local_twittercard_helper_testcase extends advanced_testcase {
             'fullname' => 'title',
             'summary' => ''
         ));
-        $context = context_course::instance($course->id);
+        $context = \context_course::instance($course->id);
 
         $this->assertEquals(
             "<meta name='twitter:card' content='summary' />\n" .
@@ -63,7 +65,7 @@ class local_twittercard_helper_testcase extends advanced_testcase {
             'fullname' => 'title',
             'summary' => 'description'
         ));
-        $context = context_course::instance($course->id);
+        $context = \context_course::instance($course->id);
 
         $this->assertEquals(
             "<meta name='twitter:card' content='summary' />\n" .
@@ -109,8 +111,8 @@ class local_twittercard_helper_testcase extends advanced_testcase {
             'summary' => '<span lang="en" class="multilang">English</span>' .
                 '<span lang="fr" class="multilang">Italian</span> description'
         ));
-        $context = context_course::instance($course->id);
-        filter_manager::reset_caches();
+        $context = \context_course::instance($course->id);
+        \filter_manager::reset_caches();
         // Enable the multilang filter and set it to apply to headings and content.
         filter_set_global_state('multilang', TEXTFILTER_ON);
         filter_set_applies_to_strings('multilang', true);

@@ -1,4 +1,5 @@
 # Unreleased (Build: YYYYMMDD00)
+- [Tests] Fix tests file names according with [MDL-71049](https://tracker.moodle.org/browse/MDL-71049)
 - [Tests] Add local Behat navigation step to stick with one-branch deploy ([MDL-72090](https://tracker.moodle.org/browse/MDL-72090)
 - [Tests] Remove Travis CI support
 - [Tests] Hack core Behat navigation step to stick with one-branch deploy ([MDL-72093](https://tracker.moodle.org/browse/MDL-72093))

@@ -22,6 +22,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace local_twittercard\tests;
+
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -31,7 +33,7 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright  2017 Matteo Scaramuccia <moodle@matteoscaramuccia.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class local_twittercard_summarycard_testcase extends advanced_testcase {
+class summarycard_test extends \advanced_testcase {
     /**
      * Data provider for test_successful_creating().
      *
@@ -241,7 +243,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
         $card = new \local_twittercard\cards\summary(
             $twittertitle, $twitterdescription, $twittersite, $twitterimage, $twitterimagealt);
 
-        filter_manager::reset_caches();
+        \filter_manager::reset_caches();
         // Enable the multilang filter and set it to apply to headings and content.
         filter_set_global_state('multilang', TEXTFILTER_ON);
         filter_set_applies_to_strings('multilang', true);
@@ -298,7 +300,7 @@ class local_twittercard_summarycard_testcase extends advanced_testcase {
      */
     public function test_failing_creating($twittertitle, $twitterdescription, $twittersite,
                                           $twitterimage, $twitterimagealt, $excmessage) {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage($excmessage);
 
         $card = new \local_twittercard\cards\summary(
