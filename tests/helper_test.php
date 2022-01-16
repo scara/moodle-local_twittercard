@@ -24,8 +24,6 @@
 
 namespace local_twittercard\tests;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Class local_twittercard_helper_testcase
  *

@@ -31,8 +31,6 @@
 
 namespace local_twittercard;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Class helper
  *

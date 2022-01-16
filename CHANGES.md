@@ -1,4 +1,5 @@
 # Unreleased (Build: YYYYMMDD00)
+- [Tests] Fix [MOODLE_INTERNAL check](https://github.com/moodlehq/moodle-local_codechecker/commit/2b019ce58d50a62d6f377d025f87a917d03f24ed) according with [Moodle Code Checker](https://github.com/moodlehq/moodle-local_codechecker) [v3.0.5](https://github.com/moodlehq/moodle-local_codechecker/releases/tag/v3.0.5)
 - [Tests] Fix tests file names according with [MDL-71049](https://tracker.moodle.org/browse/MDL-71049)
 - [Tests] Add local Behat navigation step to stick with one-branch deploy ([MDL-72090](https://tracker.moodle.org/browse/MDL-72090)
 - [Tests] Remove Travis CI support

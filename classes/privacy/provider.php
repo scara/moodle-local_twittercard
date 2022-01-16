@@ -24,8 +24,6 @@
 
 namespace local_twittercard\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy Subsystem implementation for local_twittercard implementing null_provider.
  *
