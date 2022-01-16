@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_twittercard\tests;
+namespace local_twittercard;
 
 /**
  * Class local_twittercard_summarycard_testcase
