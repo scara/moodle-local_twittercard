@@ -1,4 +1,5 @@
 # Unreleased (Build: YYYYMMDD00)
+- [Tests] Added Moodle 4.0.x release branch. Requirements in [MDL-70594](https://tracker.moodle.org/browse/MDL-70594)
 - [Tests] Fix `@covers` annotation warnings appeared since [`moodle-plugin-ci` v3.2.5](https://moodlehq.github.io/moodle-plugin-ci/CHANGELOG.html#325---2022-03-31). More details in [`moodle-local_codechecker` v3.1.0](https://github.com/moodlehq/moodle-local_codechecker/commit/e96e9598c4d9f573fcc6e6124baec3919fbce29f)
 - [Tests] Fix namespaces according with test file locations
 - [Tests] Fix [MOODLE_INTERNAL check](https://github.com/moodlehq/moodle-local_codechecker/commit/2b019ce58d50a62d6f377d025f87a917d03f24ed) according with [Moodle Code Checker](https://github.com/moodlehq/moodle-local_codechecker) [v3.0.5](https://github.com/moodlehq/moodle-local_codechecker/releases/tag/v3.0.5)

@@ -3,7 +3,7 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/scara/moodle-local_twittercard.svg)](https://github.com/scara/moodle-local_twittercard/commits/master)
 [![CI build status: master](https://github.com/scara/moodle-local_twittercard/actions/workflows/moodle-ci.yml/badge.svg?branch=master)](https://github.com/scara/moodle-local_twittercard/actions/workflows/moodle-ci.yml?query=branch%3Amaster)
 ![PHP](https://img.shields.io/badge/PHP-v7.0%20to%20v8.0-blue.svg)
-![Moodle](https://img.shields.io/badge/Moodle-v3.4%20to%20v3.11-orange.svg)
+![Moodle](https://img.shields.io/badge/Moodle-v3.4%20to%20v4.0-orange.svg)
 
 # Moodle Twitter card local plugin
 This Moodle local plugin emits a Twitter summary card for courses.
