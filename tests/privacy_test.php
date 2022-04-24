@@ -30,16 +30,28 @@ namespace local_twittercard;
  * @package    local_twittercard
  * @copyright  2017 Matteo Scaramuccia <moodle@matteoscaramuccia.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * @coversDefaultClass \local_twittercard\privacy\provider
+ * @covers \local_twittercard\privacy\provider
+ *
  */
 class privacy_test extends \advanced_testcase {
     /**
      * Tests that local_twittercard actually implements the Privacy API null_provider.
+     *
+     * @covers ::get_reason()
+     *
      */
     public function test_null_provider() {
         $this->assertTrue(class_exists('\local_twittercard\privacy\provider'));
         $this->assertEquals(
             [ 'core_privacy\local\metadata\null_provider' => 'core_privacy\local\metadata\null_provider' ],
             class_implements('\local_twittercard\privacy\provider')
+        );
+
+        $this->assertEquals(
+            'privacy:metadata',
+            \local_twittercard\privacy\provider::get_reason()
         );
     }
 }

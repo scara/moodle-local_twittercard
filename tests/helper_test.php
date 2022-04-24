@@ -30,6 +30,9 @@ namespace local_twittercard;
  * @package    local_twittercard
  * @copyright  2017 Matteo Scaramuccia <moodle@matteoscaramuccia.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * @coversDefaultClass \local_twittercard\helper
+ *
  */
 class helper_test extends \advanced_testcase {
     /**
@@ -41,6 +44,9 @@ class helper_test extends \advanced_testcase {
 
     /**
      * This are the tests for creating Twitter summary cards, even when using multi-language content.
+     *
+     * @covers ::::create_card
+     *
      */
     public function test_create_card() {
         global $DB;

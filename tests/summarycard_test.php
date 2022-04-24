@@ -30,6 +30,9 @@ namespace local_twittercard;
  * @package    local_twittercard
  * @copyright  2017 Matteo Scaramuccia <moodle@matteoscaramuccia.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *
+ * @coversDefaultClass \local_twittercard\cards\summary
+ *
  */
 class summarycard_test extends \advanced_testcase {
     /**
@@ -189,6 +192,9 @@ class summarycard_test extends \advanced_testcase {
      * @param null|string $twitterimage Tag twitter:image
      * @param null|string $twitterimagealt Tag twitter:image:alt
      * @param array $metatags Expected summary card meta tags.
+     *
+     * @covers ::create_meta_tags
+     *
      */
     public function test_successful_creating($twittertitle, $twitterdescription, $twittersite,
                                              $twitterimage, $twitterimagealt, $metatags) {
@@ -233,6 +239,9 @@ class summarycard_test extends \advanced_testcase {
      * @param null|string $twitterimage Tag twitter:image
      * @param null|string $twitterimagealt Tag twitter:image:alt
      * @param array $metatags Expected summary card meta tags.
+     *
+     * @covers ::create_meta_tags
+     *
      */
     public function test_successful_creating_multilang($twittertitle, $twitterdescription, $twittersite,
                                                        $twitterimage, $twitterimagealt, $metatags) {
@@ -295,6 +304,9 @@ class summarycard_test extends \advanced_testcase {
      * @param null|string $twitterimage Tag twitter:image
      * @param null|string $twitterimagealt Tag twitter:image:alt
      * @param string $excmessage Expected exception message.
+     *
+     * @covers ::__construct
+     *
      */
     public function test_failing_creating($twittertitle, $twitterdescription, $twittersite,
                                           $twitterimage, $twitterimagealt, $excmessage) {
