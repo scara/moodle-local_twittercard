@@ -1,5 +1,6 @@
 # Unreleased
 - [Tests] Unpin MariaDB ([MDL-72131](https://tracker.moodle.org/browse/MDL-72131?focusedCommentId=903730&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-903730))
+- [Tests] Treat [PHPUnit warnings as failures](https://github.com/moodlehq/moodle-plugin-ci/pull/165)
 
 # v1.1.8 (Build: 2022042400)
 - [Tests] Added Moodle 4.0.x release branch. Requirements in [MDL-70594](https://tracker.moodle.org/browse/MDL-70594)
