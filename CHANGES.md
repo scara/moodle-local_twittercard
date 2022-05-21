@@ -1,3 +1,6 @@
+# Unreleased
+- [Tests] Unpin MariaDB ([MDL-72131](https://tracker.moodle.org/browse/MDL-72131?focusedCommentId=903730&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-903730))
+
 # v1.1.8 (Build: 2022042400)
 - [Tests] Added Moodle 4.0.x release branch. Requirements in [MDL-70594](https://tracker.moodle.org/browse/MDL-70594)
 - [Tests] Fix `@covers` annotation warnings appeared since [`moodle-plugin-ci` v3.2.5](https://moodlehq.github.io/moodle-plugin-ci/CHANGELOG.html#325---2022-03-31). More details in [`moodle-local_codechecker` v3.1.0](https://github.com/moodlehq/moodle-local_codechecker/commit/e96e9598c4d9f573fcc6e6124baec3919fbce29f)
