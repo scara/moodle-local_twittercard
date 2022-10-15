@@ -2,6 +2,7 @@
 - [Tests] Unpin MariaDB ([MDL-72131](https://tracker.moodle.org/browse/MDL-72131?focusedCommentId=903730&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-903730))
 - [Tests] Treat [PHPUnit warnings as failures](https://github.com/moodlehq/moodle-plugin-ci/pull/165)
 - [Tests] PHP 7.4 and PostgreSQL 12 are now required by Moodle 4.1 ([MDL-71747](https://tracker.moodle.org/browse/MDL-71747?focusedCommentId=923194&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-923194))
+- [Tests] Bump GHA environment to use [Ubuntu 22.04](https://github.blog/changelog/2022-08-09-github-actions-the-ubuntu-18-04-actions-runner-image-is-being-deprecated-and-will-be-removed-by-12-1-22/)
 
 # v1.1.8 (Build: 2022042400)
 - [Tests] Added Moodle 4.0.x release branch. Requirements in [MDL-70594](https://tracker.moodle.org/browse/MDL-70594)
