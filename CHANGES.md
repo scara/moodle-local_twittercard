@@ -5,6 +5,7 @@
 - [Tests] Bump GHA environment to use [Ubuntu 22.04](https://github.blog/changelog/2022-08-09-github-actions-the-ubuntu-18-04-actions-runner-image-is-being-deprecated-and-will-be-removed-by-12-1-22/)
 - [Tests] Bump to `actions/checkout@v3`
 - [Tests] Welcome to `MOODLE_401_STABLE`, `4.1.x` release branch. Requirements in [MDL-71747](https://tracker.moodle.org/browse/MDL-71747)
+- [Tests] Fix wording and '@covers' annotation
 
 # v1.1.8 (Build: 2022042400)
 - [Tests] Added Moodle 4.0.x release branch. Requirements in [MDL-70594](https://tracker.moodle.org/browse/MDL-70594)

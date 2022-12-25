@@ -43,9 +43,9 @@ class helper_test extends \advanced_testcase {
     }
 
     /**
-     * This are the tests for creating Twitter summary cards, even when using multi-language content.
+     * These are the tests for creating Twitter summary cards, even when using multi-language content.
      *
-     * @covers ::::create_card
+     * @covers ::create_card
      *
      */
     public function test_create_card() {
