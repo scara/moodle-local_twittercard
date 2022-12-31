@@ -6,6 +6,7 @@
 - [Tests] Bump to `actions/checkout@v3`
 - [Tests] Welcome to `MOODLE_401_STABLE`, `4.1.x` release branch. Requirements in [MDL-71747](https://tracker.moodle.org/browse/MDL-71747)
 - [Tests] Fix wording and '@covers' annotation
+- [Tests] PHP 8.0 and PostgreSQL 13 are now required by Moodle 4.1 ([MDL-74905](https://tracker.moodle.org/browse/MDL-74905))
 
 # v1.1.8 (Build: 2022042400)
 - [Tests] Added Moodle 4.0.x release branch. Requirements in [MDL-70594](https://tracker.moodle.org/browse/MDL-70594)
