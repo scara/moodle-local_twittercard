@@ -48,7 +48,7 @@ class summary {
      * The list of the supported extensions for the tag twitter:image.
      * @var array
      */
-    private $supportedimgexts = array('gif', 'jpg', 'png', 'webp');
+    private $supportedimgexts = ['gif', 'jpg', 'png', 'webp'];
 
     /**
      * Tag twitter:description.
@@ -121,7 +121,7 @@ class summary {
      * @return array The meta tags representing the Twitter summary card; otherwise, an empty array.
      */
     public function create_meta_tags() {
-        $metatags = array();
+        $metatags = [];
 
         // Tag twitter:card => summary.
         $metatags[] = "<meta name='twitter:card' content='summary' />\n";

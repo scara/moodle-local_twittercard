@@ -62,7 +62,8 @@ class helper {
         }
 
         $sectiontext = file_rewrite_pluginfile_urls($section->summary, 'pluginfile.php',
-            $context->id, 'course', 'section', $section->id);;
+            $context->id, 'course', 'section', $section->id
+        );
         if (empty($sectiontext)) {
             return null;
         }
@@ -83,7 +84,7 @@ class helper {
         }
         $imgalt = $imgtag->getAttribute('alt');
 
-        return array('url' => $imgurl, 'alt' => $imgalt);
+        return ['url' => $imgurl, 'alt' => $imgalt];
     }
 
     /**
@@ -101,13 +102,14 @@ class helper {
 
             // Tag twitter:title (required) - Title of content.
             $coursetitle = empty($course->fullname) ? $course->name : $course->fullname;
-            $coursetitle = format_string($coursetitle, true, array('context' => \context_system::instance()));
+            $coursetitle = format_string($coursetitle, true, ['context' => \context_system::instance()]);
 
             // Tag twitter:description (required) - Description of content.
             $coursedescr = $coursetitle;
             if (!empty($course->summary)) {
                 $coursedescr = format_text($course->summary, FORMAT_HTML,
-                    array('context' => \context_system::instance(), 'newlines' => false));
+                    ['context' => \context_system::instance(), 'newlines' => false]
+                );
                 $coursedescr = html_to_text($coursedescr, -1, false);
             }
 

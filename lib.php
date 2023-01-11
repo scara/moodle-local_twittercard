@@ -49,7 +49,7 @@ function local_twittercard_before_standard_html_head() {
             return '';
         }
 
-        list($context, $course, $cm) = get_context_info_array($PAGE->context->id);
+        [$context, $course, $cm] = get_context_info_array($PAGE->context->id);
 
         // Sanity checks.
         // 1. Do not emit the card if we're not looking at a course.

@@ -33,4 +33,4 @@ $plugin->release = '1.1.9 (Build: 2022123100)';
 $plugin->requires = 2017111300;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->cron = 0;
-$plugin->dependencies = array();
+$plugin->dependencies = [];

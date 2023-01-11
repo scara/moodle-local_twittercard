@@ -41,7 +41,7 @@ class summarycard_test extends \advanced_testcase {
      * @return array The type-value pairs fixture.
      */
     public function successful_creating_provider() {
-        return array(
+        return [
             [
                 'title', 'description', '@site', 'http://example.org/path/to/img.png', 'imagealt',
                 [
@@ -176,9 +176,9 @@ class summarycard_test extends \advanced_testcase {
                         "012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" .
                         "012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789" .
                         "012345678901234567890123456789012345678901234567890123456789012345678901234567890123456...' />\n",
-                    ]
+                ]
             ],
-        );
+        ];
     }
 
     /**
@@ -199,7 +199,8 @@ class summarycard_test extends \advanced_testcase {
     public function test_successful_creating($twittertitle, $twitterdescription, $twittersite,
                                              $twitterimage, $twitterimagealt, $metatags) {
         $card = new \local_twittercard\cards\summary(
-            $twittertitle, $twitterdescription, $twittersite, $twitterimage, $twitterimagealt);
+            $twittertitle, $twitterdescription, $twittersite, $twitterimage, $twitterimagealt
+        );
 
         $this->assertEquals($metatags, $card->create_meta_tags());
     }
@@ -210,7 +211,7 @@ class summarycard_test extends \advanced_testcase {
      * @return array The type-value pairs fixture.
      */
     public function successful_creating_multilang_provider() {
-        return array(
+        return [
             [
                 '<span lang="en" class="multilang">English</span><span lang="fr" class="multilang">Italian</span> title',
                 '<span lang="en" class="multilang">English</span><span lang="fr" class="multilang">Italian</span> description',
@@ -225,7 +226,7 @@ class summarycard_test extends \advanced_testcase {
                     "<meta name='twitter:image:alt' content='imagealt' />\n",
                 ]
             ],
-        );
+        ];
     }
 
     /**
@@ -248,7 +249,8 @@ class summarycard_test extends \advanced_testcase {
         $this->resetAfterTest();
 
         $card = new \local_twittercard\cards\summary(
-            $twittertitle, $twitterdescription, $twittersite, $twitterimage, $twitterimagealt);
+            $twittertitle, $twitterdescription, $twittersite, $twitterimage, $twitterimagealt
+        );
 
         \filter_manager::reset_caches();
         // Enable the multilang filter and set it to apply to headings and content.
@@ -265,7 +267,7 @@ class summarycard_test extends \advanced_testcase {
      * @return array The type-value pairs fixture.
      */
     public function failing_creating_provider() {
-        return array(
+        return [
             [
                 null, null, null, null, null,
                 'twitter:title and twitter:description are required'
@@ -290,7 +292,7 @@ class summarycard_test extends \advanced_testcase {
                 null, 'description', '@site', 'http://example.org/path/to/img.png', 'imagealt',
                 'twitter:title is required'
             ],
-        );
+        ];
     }
 
     /**
@@ -314,6 +316,7 @@ class summarycard_test extends \advanced_testcase {
         $this->expectExceptionMessage($excmessage);
 
         $card = new \local_twittercard\cards\summary(
-            $twittertitle, $twitterdescription, $twittersite, $twitterimage, $twitterimagealt);
+            $twittertitle, $twitterdescription, $twittersite, $twitterimage, $twitterimagealt
+        );
     }
 }

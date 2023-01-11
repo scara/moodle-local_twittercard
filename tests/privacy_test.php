@@ -45,7 +45,7 @@ class privacy_test extends \advanced_testcase {
     public function test_null_provider() {
         $this->assertTrue(class_exists('\local_twittercard\privacy\provider'));
         $this->assertEquals(
-            [ 'core_privacy\local\metadata\null_provider' => 'core_privacy\local\metadata\null_provider' ],
+            ['core_privacy\local\metadata\null_provider' => 'core_privacy\local\metadata\null_provider'],
             class_implements('\local_twittercard\privacy\provider')
         );
 
