@@ -1,5 +1,6 @@
 # Unreleased
 - Use short array syntax ([MDLSITE-4776](https://tracker.moodle.org/browse/MDLSITE-4776))
+- [Tests] PHP 7.4 is no more supported by Moodle 4.2 ([MDL-74905](https://tracker.moodle.org/browse/MDL-74905))
 
 # v1.1.9 (Build: 2022123100)
 - [Tests] Unpin MariaDB ([MDL-72131](https://tracker.moodle.org/browse/MDL-72131?focusedCommentId=903730&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-903730))
